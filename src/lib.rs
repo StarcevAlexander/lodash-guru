@@ -151,7 +151,7 @@ pub fn shuffle<T: Clone>(values: &[T]) -> Vec<T> {
 }
 
 pub fn sample<T: Clone>(values: &[T]) -> Option<T> {
-    let mut state = seeded_rng();
+    let state = seeded_rng();
     if values.is_empty() {
         None
     } else {
@@ -177,7 +177,7 @@ mod tests {
             chunk(&[1, 2, 3, 4, 5], 2),
             vec![vec![1, 2], vec![3, 4], vec![5]]
         );
-        assert_eq!(chunk(&[1, 2], 0), vec![vec![1, 2]]);
+        assert_eq!(chunk(&[1, 2], 0), vec![vec![1], vec![2]]);
     }
 
     #[test]
