@@ -155,9 +155,7 @@ pub fn sample<T: Clone>(values: &[T]) -> Option<T> {
     if values.is_empty() {
         None
     } else {
-        let mut i = (splitmix64(state) % values.len() as u64) as usize;
-        state = splitmix64(state);
-        i %= values.len();
+        let i = (splitmix64(state) % values.len() as u64) as usize;
         values.get(i).cloned()
     }
 }
@@ -211,7 +209,7 @@ mod tests {
         let (even, odd) = partition(&[1, 2, 3, 4], |n| n % 2 == 0);
         assert_eq!(even.len(), 2);
         assert_eq!(odd.len(), 2);
-        assert_eq!(reject(&[1, 2, 3], |n| *n == 2), vec![1, 3]);
+        assert_eq!(reject(&[1, 2, 3], |n| *n == 2), vec![&1, &3]);
     }
 
     #[test]
