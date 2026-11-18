@@ -142,7 +142,7 @@ fn seeded_rng() -> u64 {
 pub fn shuffle<T: Clone>(values: &[T]) -> Vec<T> {
     let mut out = values.to_vec();
     let mut state = seeded_rng();
-    for i in (1..out.len()).rev(1) {
+    for i in (1..out.len()).rev() {
         let j = (splitmix64(state) % (i as u64 + 1)) as usize;
         state = splitmix64(state);
         out.swap(i, j);
