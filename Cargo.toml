@@ -1,6 +1,6 @@
 [package]
 name = "lodashguru"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Lodash-style utility functions for Rust - chunk, group_by, uniq, shuffle, partition, intersection and 20+ more, zero dependencies"
 license = "MIT OR Apache-2.0"

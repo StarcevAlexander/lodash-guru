@@ -155,8 +155,9 @@ pub fn sample<T: Clone>(values: &[T]) -> Option<T> {
     if values.is_empty() {
         None
     } else {
-        let i = (splitmix64(state) % values.len() as u64) as usize;
+        let mut i = (splitmix64(state) % values.len() as u64) as usize;
         state = splitmix64(state);
+        i %= values.len();
         values.get(i).cloned()
     }
 }
@@ -204,7 +205,7 @@ mod tests {
 
     #[test]
     fn group_and_partition() {
-        let grouped = group_by(&[1, 2, 3, 4], |n| n % 2);
+        let grouped = group_by(&[1, 2, 3, 4], |n: &i32| *n % 2);
         assert_eq!(grouped[&0].len(), 2);
         assert_eq!(grouped[&1].len(), 2);
         let (even, odd) = partition(&[1, 2, 3, 4], |n| n % 2 == 0);
