@@ -1,15 +1,15 @@
-> **DEPRECATED:** this crate has been renamed to [`lodash-guru`](https://crates.io/crates/lodash-guru). New code should depend on `lodash-guru`.
-
-# lodashguru
+# lodash-guru
 
 **Lodash-style utility functions for Rust.** 25+ battle-tested helpers for slices and collections — `chunk`, `group_by`, `uniq`, `shuffle`, `partition`, `intersection` and more, with zero dependencies.
+
+Formerly published on crates.io as `lodashguru`.
 
 For developers coming from JavaScript/TypeScript who miss the familiar Lodash vocabulary, and for Rust developers who want one obvious place for everyday collection helpers.
 
 ## Usage
 
 ```rust
-use lodashguru::{chunk, group_by, shuffle, uniq};
+use lodash_guru::{chunk, group_by, shuffle, uniq};
 
 fn main() {
     let pages = chunk(&[1, 2, 3, 4, 5], 2);
