@@ -1,3 +1,5 @@
+> **DEPRECATED:** this crate has been renamed to [`lodash-guru`](https://crates.io/crates/lodash-guru). New code should depend on `lodash-guru`.
+
 # lodashguru
 
 **Lodash-style utility functions for Rust.** 25+ battle-tested helpers for slices and collections — `chunk`, `group_by`, `uniq`, `shuffle`, `partition`, `intersection` and more, with zero dependencies.
